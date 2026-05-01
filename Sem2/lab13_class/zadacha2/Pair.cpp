@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-//присваивание
+//ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ
 Pair& Pair :: operator=(const Pair& p) {
 	if (&p == this) return *this;
 	first = p.first;
@@ -10,62 +10,62 @@ Pair& Pair :: operator=(const Pair& p) {
 	return *this;
 }
 
-//сложение
+//Г±Г«Г®Г¦ГҐГ­ГЁГҐ
 Pair Pair::operator+(const Pair& p) {
 	return Pair(first + p.first, second + p.second);
 }
 
-//вычитание
+//ГўГ»Г·ГЁГІГ Г­ГЁГҐ
 Pair Pair:: operator-(const Pair& p) {
 	return Pair(first - p.first, second - p.second);
 }
 
-//деление на  int
+//Г¤ГҐГ«ГҐГ­ГЁГҐ Г­Г   int
 Pair Pair::operator/(const int& x) {
 	if (x == 0) return Pair(0, 0);
 	return Pair(first / x, second / x);
 }
 
-//префиксный инкремент
+//ГЇГ°ГҐГґГЁГЄГ±Г­Г»Г© ГЁГ­ГЄГ°ГҐГ¬ГҐГ­ГІ
 Pair& Pair::operator++() {
 	++first;
 	return *this;
 }
 
-//постфиксный инкремент
+//ГЇГ®Г±ГІГґГЁГЄГ±Г­Г»Г© ГЁГ­ГЄГ°ГҐГ¬ГҐГ­ГІ
 Pair Pair::operator++(int) {
 	Pair temp = *this;
 	second++;
 	return temp;
 }
 
-//сравнение (больше)
+//Г±Г°Г ГўГ­ГҐГ­ГЁГҐ (ГЎГ®Г«ГјГёГҐ)
 bool Pair::operator>(const Pair& other) {
 	if (first != other.first)
 		return first > other.first;
 	return second > other.second;
 }
 
-//сравнение (меньше)
-bool Pair::operator<(const Pair& other) {
+//Г±Г°Г ГўГ­ГҐГ­ГЁГҐ (Г¬ГҐГ­ГјГёГҐ)
+bool Pair::operator<(const Pair& other) const {
 	if (first != other.first)
 		return first < other.first;
 	return second < other.second;
 }
 
-//сравнение на равенство
+//Г±Г°Г ГўГ­ГҐГ­ГЁГҐ Г­Г  Г°Г ГўГҐГ­Г±ГІГўГ®
 bool Pair::operator==(const Pair& other) const {
 	return first == other.first && second == other.second;
 }
 
-//ввод
+//ГўГўГ®Г¤
 istream& operator>>(istream& in, Pair& p) {
 	cout << "first? "; in >> p.first;
 	cout << "second? "; in >> p.second;
 	return in;
 }
 
-//вывод
+//ГўГ»ГўГ®Г¤
 ostream& operator<<(ostream& out, const Pair& p) {
 	return (out << "(" << p.first << " : " << p.second << ")");
 }
