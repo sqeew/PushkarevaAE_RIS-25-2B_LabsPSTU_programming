@@ -91,5 +91,11 @@ int main() {
 	sr = srednee(l);
 	zad5(l, sr);
 	print_list(l);
+
+	cout << "\n===Sorting...===" << endl;
+	l.sort();
+	print_list(l);
+	l.reverse();
+	print_list(l);
 	return 0;
 }
