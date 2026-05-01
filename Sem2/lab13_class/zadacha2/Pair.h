@@ -14,7 +14,6 @@ public:
 	double get_second() { return second; }
 	void set_first(int a) { first = a; }
 	void set_second(double b) { second = b; }
-	//перегруженные
 	Pair& operator=(const Pair&);
 	Pair operator+(const Pair&);
 	Pair operator-(const Pair&);
@@ -23,7 +22,7 @@ public:
 	Pair operator++(int);
 	bool operator==(const Pair& other) const;
 	bool operator>(const Pair&);
-	bool operator<(const Pair&);
+	bool operator<(const Pair&) const;
 	friend istream& operator>>(istream& in, Pair& p);
 	friend ostream& operator<<(ostream& out, const Pair& p);
 };
